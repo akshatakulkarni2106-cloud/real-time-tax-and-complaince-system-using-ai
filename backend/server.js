@@ -6,7 +6,8 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174','http://localhost:5000'] }));
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 app.use('/api/auth',      require('./routes/authRoutes'));
 app.use('/api/chat',      require('./routes/chatRoutes'));

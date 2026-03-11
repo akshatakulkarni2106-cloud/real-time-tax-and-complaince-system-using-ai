@@ -27,11 +27,7 @@ const CSS = `
   .pf2 *, .pf2 *::before, .pf2 *::after { box-sizing:border-box; margin:0; padding:0; }
   .pf2 { font-family:'DM Sans',sans-serif; background:#050505; min-height:100vh; color:#E8E6DE; overflow-x:hidden; padding-bottom:100px; }
 
-  /* ═══ HERO BANNER ═══ */
-  .pf2-hero {
-    position:relative; width:100%; height:260px; overflow:hidden;
-    background:#050505;
-  }
+  .pf2-hero { position:relative; width:100%; height:260px; overflow:hidden; background:#050505; }
   .pf2-hero-bg {
     position:absolute; inset:0;
     background:
@@ -40,12 +36,9 @@ const CSS = `
       radial-gradient(ellipse at 50% 100%, rgba(100,80,255,0.10) 0%, transparent 50%),
       linear-gradient(180deg, #0c0a00 0%, #080808 60%, #050505 100%);
   }
-  .pf2-hero-lines {
-    position:absolute; inset:0; overflow:hidden; opacity:0.5;
-  }
+  .pf2-hero-lines { position:absolute; inset:0; overflow:hidden; opacity:0.5; }
   .pf2-hero-lines::before {
-    content:'';
-    position:absolute; inset:0;
+    content:''; position:absolute; inset:0;
     background-image:
       repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(240,165,0,0.06) 60px),
       repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(240,165,0,0.04) 60px);
@@ -68,16 +61,12 @@ const CSS = `
     animation-delay:var(--delay);
   }
 
-  /* ═══ BODY ═══ */
   .pf2-body { max-width:920px; margin:0 auto; padding:0 24px; }
 
-  /* ═══ AVATAR SECTION ═══ */
   .pf2-identity {
     display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:flex-end;
-    margin-top:-72px; margin-bottom:36px;
-    animation:pf-up 0.6s ease both;
+    margin-top:-72px; margin-bottom:36px; animation:pf-up 0.6s ease both;
   }
-
   .pf2-avatar-zone { position:relative; }
   .pf2-avatar-ring {
     position:absolute; inset:-6px; border-radius:50%;
@@ -107,8 +96,7 @@ const CSS = `
     position:absolute; inset:3px; border-radius:50%; z-index:3;
     background:rgba(0,0,0,0.75); display:flex; flex-direction:column;
     align-items:center; justify-content:center; gap:4px;
-    opacity:0; transition:opacity 0.25s; cursor:pointer;
-    backdrop-filter:blur(4px);
+    opacity:0; transition:opacity 0.25s; cursor:pointer; backdrop-filter:blur(4px);
   }
   .pf2-avatar-zone:hover .pf2-avatar-hover { opacity:1; }
   .pf2-avatar-hover span:first-child { font-size:24px; }
@@ -117,48 +105,35 @@ const CSS = `
     position:absolute; bottom:4px; right:4px; z-index:4;
     width:16px; height:16px; border-radius:50%;
     background:radial-gradient(circle, #00ff9d, #00c872);
-    border:2px solid #050505;
-    box-shadow:0 0 8px rgba(0,255,157,0.6);
+    border:2px solid #050505; box-shadow:0 0 8px rgba(0,255,157,0.6);
     animation:pf-pulse 2.5s ease-in-out infinite;
   }
-
   .pf2-nameblock { padding-bottom:8px; }
   .pf2-name {
     font-family:'Playfair Display',serif;
-    font-size:clamp(36px,5.5vw,60px); font-weight:900; line-height:1;
-    letter-spacing:-0.02em;
+    font-size:clamp(36px,5.5vw,60px); font-weight:900; line-height:1; letter-spacing:-0.02em;
     background:linear-gradient(135deg, #F5F0E8 30%, #F0A500 70%, #FFD060);
     background-size:200% auto;
     -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-    animation:pf-shimmer 4s linear infinite;
-    margin-bottom:8px;
+    animation:pf-shimmer 4s linear infinite; margin-bottom:8px;
   }
-  .pf2-meta {
-    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-    font-size:13px; color:#4a4a44;
-  }
+  .pf2-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:13px; color:#4a4a44; }
   .pf2-meta-sep { color:#222; }
   .pf2-chip {
     display:inline-flex; align-items:center; gap:5px;
     padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700;
-    letter-spacing:0.12em; text-transform:uppercase;
-    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.12em; text-transform:uppercase; font-family:'JetBrains Mono',monospace;
   }
   .pf2-chip-gold {
     background:linear-gradient(135deg,rgba(240,165,0,0.15),rgba(240,165,0,0.05));
-    border:1px solid rgba(240,165,0,0.25); color:#F0A500;
-    animation:pf-border 3s ease infinite;
+    border:1px solid rgba(240,165,0,0.25); color:#F0A500; animation:pf-border 3s ease infinite;
   }
-  .pf2-chip-green {
-    background:rgba(0,200,150,0.08); border:1px solid rgba(0,200,150,0.2); color:#00C896;
-  }
+  .pf2-chip-green { background:rgba(0,200,150,0.08); border:1px solid rgba(0,200,150,0.2); color:#00C896; }
 
-  /* ═══ STATS STRIP ═══ */
   .pf2-stats {
     display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
     margin-bottom:24px; border-radius:16px; overflow:hidden;
-    border:1px solid #161616;
-    animation:pf-up 0.6s 0.08s ease both;
+    border:1px solid #161616; animation:pf-up 0.6s 0.08s ease both;
   }
   .pf2-stat {
     background:#0d0d0d; padding:20px 16px;
@@ -180,23 +155,14 @@ const CSS = `
     opacity:0; transition:opacity 0.3s;
   }
   .pf2-stat:hover .pf2-stat-glow { opacity:0.06; }
-  .pf2-stat-num {
-    font-family:'Playfair Display',serif; font-size:34px; font-weight:900;
-    color:var(--c); line-height:1; position:relative; z-index:1;
-  }
-  .pf2-stat-lbl {
-    font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:600;
-    color:#383832; letter-spacing:0.15em; text-transform:uppercase; position:relative; z-index:1;
-  }
+  .pf2-stat-num { font-family:'Playfair Display',serif; font-size:34px; font-weight:900; color:var(--c); line-height:1; position:relative; z-index:1; }
+  .pf2-stat-lbl { font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:600; color:#383832; letter-spacing:0.15em; text-transform:uppercase; position:relative; z-index:1; }
   .pf2-stat-ico { font-size:16px; position:relative; z-index:1; margin-bottom:2px; }
 
-  /* ═══ SECTION CARD ═══ */
   .pf2-card {
     border-radius:20px; margin-bottom:16px;
     background:linear-gradient(160deg, #0f0f0f 0%, #0a0a0a 100%);
-    border:1px solid #181818; overflow:hidden;
-    position:relative;
-    transition:border-color 0.3s;
+    border:1px solid #181818; overflow:hidden; position:relative; transition:border-color 0.3s;
   }
   .pf2-card:hover { border-color:#242420; }
   .pf2-card::before {
@@ -212,31 +178,24 @@ const CSS = `
   }
   .pf2-label::before { content:''; width:20px; height:1px; background:linear-gradient(90deg,#F0A500,transparent); }
 
-  /* ═══ COMPLETION ═══ */
   .pf2-comp-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
-  .pf2-comp-pct {
-    font-family:'Playfair Display',serif; font-size:42px; font-weight:900;
-    color:#F0A500; line-height:1; font-style:italic;
-  }
+  .pf2-comp-pct { font-family:'Playfair Display',serif; font-size:42px; font-weight:900; color:#F0A500; line-height:1; font-style:italic; }
   .pf2-comp-msg { font-size:12px; color:#444; text-align:right; line-height:1.5; }
   .pf2-bar-track { width:100%; height:4px; background:#161616; border-radius:100px; margin-bottom:16px; overflow:hidden; }
   .pf2-bar-fill {
     height:100%; border-radius:100px;
     background:linear-gradient(90deg,#B07A00,#F0A500,#FFD060);
-    box-shadow:0 0 16px rgba(240,165,0,0.5);
-    transition:width 1s cubic-bezier(0.4,0,0.2,1);
+    box-shadow:0 0 16px rgba(240,165,0,0.5); transition:width 1s cubic-bezier(0.4,0,0.2,1);
   }
   .pf2-comp-pills { display:flex; gap:8px; flex-wrap:wrap; }
   .pf2-comp-pill {
     display:flex; align-items:center; gap:6px;
-    padding:5px 12px; border-radius:100px; font-size:11px;
-    border:1px solid; transition:all 0.2s;
+    padding:5px 12px; border-radius:100px; font-size:11px; border:1px solid; transition:all 0.2s;
   }
   .pf2-comp-pill.done  { background:rgba(0,200,150,0.06); border-color:rgba(0,200,150,0.2); color:#00C896; }
   .pf2-comp-pill.todo  { background:rgba(255,255,255,0.02); border-color:#1c1c1c; color:#383832; }
   .pf2-comp-pill-dot   { width:5px; height:5px; border-radius:50%; flex-shrink:0; }
 
-  /* ═══ BADGES ═══ */
   .pf2-badges { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:10px; }
   .pf2-badge {
     padding:16px; border-radius:14px; border:1px solid #181818;
@@ -265,7 +224,6 @@ const CSS = `
     font-family:'JetBrains Mono',monospace; letter-spacing:0.1em;
   }
 
-  /* ═══ FORM ROWS ═══ */
   .pf2-rows { display:flex; flex-direction:column; }
   .pf2-row {
     display:grid; grid-template-columns:180px 1fr; align-items:center;
@@ -273,10 +231,7 @@ const CSS = `
   }
   .pf2-row:last-child { border-bottom:none; padding-bottom:0; }
   .pf2-row:hover { background:rgba(255,255,255,0.008); margin:0 -24px; padding-left:24px; padding-right:24px; }
-  .pf2-row-key {
-    font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500;
-    color:#383832; letter-spacing:0.1em; flex-shrink:0;
-  }
+  .pf2-row-key { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; color:#383832; letter-spacing:0.1em; flex-shrink:0; }
   .pf2-row-val { font-size:14px; font-weight:500; text-align:right; }
   .pf2-row-val.gold    { color:#F0A500; font-family:'JetBrains Mono',monospace; font-size:12px; }
   .pf2-row-val.teal    { color:#00C896; font-family:'JetBrains Mono',monospace; font-size:12px; }
@@ -287,8 +242,7 @@ const CSS = `
     background:rgba(255,255,255,0.03); border:1px solid #222;
     color:#E8E6DE; font-size:13px; padding:10px 16px;
     border-radius:10px; outline:none; font-family:'DM Sans',sans-serif;
-    width:100%; max-width:280px; float:right;
-    transition:border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    width:100%; max-width:280px; float:right; transition:border-color 0.2s, box-shadow 0.2s, background 0.2s;
   }
   .pf2-input:focus {
     border-color:rgba(240,165,0,0.4);
@@ -300,16 +254,13 @@ const CSS = `
     color:#E8E6DE; font-size:13px; padding:10px 16px;
     border-radius:10px; outline:none; font-family:'DM Sans',sans-serif;
     width:100%; max-width:280px; float:right; cursor:pointer;
-    transition:border-color 0.2s, box-shadow 0.2s;
-    appearance:none;
+    transition:border-color 0.2s, box-shadow 0.2s; appearance:none;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23444' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat:no-repeat; background-position:right 14px center;
-    padding-right:36px;
+    background-repeat:no-repeat; background-position:right 14px center; padding-right:36px;
   }
   .pf2-select:focus { border-color:rgba(240,165,0,0.4); box-shadow:0 0 0 3px rgba(240,165,0,0.06); }
   .pf2-select option { background:#111; }
 
-  /* ═══ BUTTONS ═══ */
   .pf2-btn-ghost {
     background:transparent; border:1px solid #242420;
     color:#555; font-size:12px; font-weight:600; padding:8px 18px;
@@ -330,20 +281,17 @@ const CSS = `
     box-shadow:0 8px 28px rgba(240,165,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
   }
 
-  /* ═══ SOCIAL / QUICK LINKS ═══ */
   .pf2-socials { display:flex; gap:10px; flex-wrap:wrap; }
   .pf2-social-btn {
     display:flex; align-items:center; gap:8px;
     background:rgba(255,255,255,0.03); border:1px solid #1c1c1c;
     color:#555; font-size:12px; font-weight:500; padding:10px 16px;
     border-radius:12px; cursor:pointer; font-family:'DM Sans',sans-serif;
-    transition:all 0.2s; text-decoration:none;
-    flex:1; min-width:120px; justify-content:center;
+    transition:all 0.2s; text-decoration:none; flex:1; min-width:120px; justify-content:center;
   }
   .pf2-social-btn:hover { color:#E8E6DE; border-color:#333; background:rgba(255,255,255,0.06); transform:translateY(-1px); }
   .pf2-social-ico { font-size:16px; }
 
-  /* ═══ ACTIVITY TIMELINE ═══ */
   .pf2-timeline { display:flex; flex-direction:column; gap:0; }
   .pf2-tl-item {
     display:flex; gap:16px; align-items:flex-start; padding:12px 0;
@@ -353,19 +301,15 @@ const CSS = `
   .pf2-tl-dot {
     width:28px; height:28px; border-radius:50%; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
-    font-size:12px; border:1px solid;
-    margin-top:2px;
+    font-size:12px; border:1px solid; margin-top:2px;
   }
-  .pf2-tl-body {}
   .pf2-tl-title { font-size:13px; color:#888; font-weight:500; margin-bottom:2px; }
   .pf2-tl-date  { font-size:10px; color:#333; font-family:'JetBrains Mono',monospace; }
 
-  /* ═══ DANGER ═══ */
   .pf2-danger {
     border-radius:20px; overflow:hidden; margin-bottom:16px;
     background:linear-gradient(160deg, #0f0808 0%, #0a0808 100%);
-    border:1px solid rgba(255,59,59,0.1);
-    animation:pf-up 0.6s 0.28s ease both;
+    border:1px solid rgba(255,59,59,0.1); animation:pf-up 0.6s 0.28s ease both;
   }
   .pf2-danger-inner { padding:24px; }
   .pf2-danger-head { display:flex; align-items:center; gap:8px; margin-bottom:16px; }
@@ -381,7 +325,6 @@ const CSS = `
   }
   .pf2-btn-danger:hover { background:rgba(255,59,59,0.12); border-color:rgba(255,59,59,0.3); color:#FF3B3B; }
 
-  /* ═══ TOAST ═══ */
   .pf2-toast {
     position:fixed; bottom:32px; left:50%;
     background:#0f0f0f; border:1px solid rgba(0,200,150,0.3);
@@ -436,13 +379,12 @@ const FIELDS = [
 ];
 
 const TIMELINE = [
-  { icon:'✅', color:'#00C896', bg:'rgba(0,200,150,0.08)', border:'rgba(0,200,150,0.2)',  title:'GSTR-3B filed successfully',       date:'Mar 10, 2026' },
-  { icon:'📋', color:'#F0A500', bg:'rgba(240,165,0,0.08)', border:'rgba(240,165,0,0.2)',  title:'Profile updated',                  date:'Feb 28, 2026' },
-  { icon:'🏅', color:'#7B8CFF', bg:'rgba(123,140,255,0.08)',border:'rgba(123,140,255,0.2)',title:'Badge earned: Early Adopter',      date:'Feb 14, 2026' },
-  { icon:'🔐', color:'#888',    bg:'rgba(136,136,136,0.06)',border:'rgba(136,136,136,0.15)',title:'Account created',                 date:'Feb 14, 2026' },
+  { icon:'✅', color:'#00C896', bg:'rgba(0,200,150,0.08)', border:'rgba(0,200,150,0.2)',  title:'GSTR-3B filed successfully',  date:'Mar 10, 2026' },
+  { icon:'📋', color:'#F0A500', bg:'rgba(240,165,0,0.08)', border:'rgba(240,165,0,0.2)',  title:'Profile updated',             date:'Feb 28, 2026' },
+  { icon:'🏅', color:'#7B8CFF', bg:'rgba(123,140,255,0.08)',border:'rgba(123,140,255,0.2)',title:'Badge earned: Early Adopter', date:'Feb 14, 2026' },
+  { icon:'🔐', color:'#888',    bg:'rgba(136,136,136,0.06)',border:'rgba(136,136,136,0.15)',title:'Account created',            date:'Feb 14, 2026' },
 ];
 
-/* ── Particles ──────────────────────────────────────────────────────────────── */
 const PARTICLES = Array.from({length:12}, (_, i) => ({
   id: i,
   left: `${8 + (i * 8) % 88}%`,
@@ -456,16 +398,17 @@ const PARTICLES = Array.from({length:12}, (_, i) => ({
    COMPONENT
 ══════════════════════════════════════════════════════════════════════════════ */
 export default function Profile() {
-  const { profile, updateProfile } = useApp();
+  const { profile, updateProfile, updateProfilePicture } = useApp();
   const [editing, setEditing] = useState(false);
   const [form, setForm]       = useState({});
   const [saved, setSaved]     = useState(false);
   const [pfp, setPfp]         = useState(null);
   const fileRef               = useRef();
 
+  // Load pfp from DB via profile context (per user, not localStorage)
   useEffect(() => {
-    try { const s = localStorage.getItem('ts_pfp'); if (s) setPfp(s); } catch(_) {}
-  }, []);
+    if (profile?.profilePicture) setPfp(profile.profilePicture);
+  }, [profile]);
 
   const startEdit = () => { setForm({ ...profile }); setEditing(true); };
   const save = async () => {
@@ -473,10 +416,15 @@ export default function Profile() {
     setEditing(false); setSaved(true);
     setTimeout(() => setSaved(false), 2800);
   };
+
   const handlePfp = (e) => {
     const file = e.target.files[0]; if (!file) return;
     const reader = new FileReader();
-    reader.onload = (ev) => { setPfp(ev.target.result); try { localStorage.setItem('ts_pfp', ev.target.result); } catch(_){} };
+    reader.onload = async (ev) => {
+      const base64 = ev.target.result;
+      setPfp(base64);                      // update UI instantly
+      await updateProfilePicture(base64);  // save to DB per user
+    };
     reader.readAsDataURL(file);
   };
 

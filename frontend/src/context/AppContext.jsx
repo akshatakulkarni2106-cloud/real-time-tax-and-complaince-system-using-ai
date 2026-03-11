@@ -44,6 +44,11 @@ export function AppProvider({ children }) {
     setProfile(data);
   };
 
+  const updateProfilePicture = async (base64Image) => {
+    const { data } = await axios.put(`${API}/profile/picture`, { profilePicture: base64Image }, headers());
+    setProfile(prev => ({ ...prev, profilePicture: data.profilePicture }));
+  };
+
   const sendChat = async (message) => {
     const { data } = await axios.post(`${API}/chat/send`, { message }, headers());
     return data.reply;
@@ -71,7 +76,7 @@ export function AppProvider({ children }) {
     <AppContext.Provider value={{
       token, profile,
       login, register, logout,
-      fetchProfile, updateProfile,
+      fetchProfile, updateProfile, updateProfilePicture,
       sendChat, getChatHistory, clearChat,
       getChecklist, updateChecklist
     }}>

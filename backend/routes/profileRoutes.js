@@ -29,4 +29,27 @@ router.put('/', auth, async (req, res) => {
   res.json(user);
 });
 
+router.put('/picture', auth, async (req, res) => {
+  console.log('📸 /picture route hit');
+  console.log('Body keys:', Object.keys(req.body));
+  console.log('profilePicture length:', req.body.profilePicture?.length);
+
+  const { profilePicture } = req.body;
+  if (!profilePicture) return res.status(400).json({ error: 'No image provided' });
+
+  try {
+    const user = await User.findByIdAndUpdate(
+      req.user.id,
+      { profilePicture },
+      { new: true }
+    ).select('-password');
+
+    console.log('✅ Saved! profilePicture length in DB:', user.profilePicture?.length);
+    res.json(user);
+  } catch(err) {
+    console.error('❌ DB Error:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;

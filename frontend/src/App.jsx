@@ -12,6 +12,7 @@ import Calculator  from './pages/Calculator';
 import Schemes     from './pages/Schemes';
 import Documents   from './pages/Documents';
 import Profile     from './pages/Profile';
+import TaxPredictor from './pages/taxpredictor';
 
 function Protected({ children }) {
   const { token } = useApp();
@@ -23,17 +24,18 @@ function AppRoutes() {
     <>
       <Nav />
       <Routes>
-        <Route path="/"           element={<Landing />} />
-        <Route path="/login"      element={<Login />} />
-        <Route path="/onboarding" element={<Protected><Onboarding /></Protected>} />
-        <Route path="/dashboard"  element={<Protected><Dashboard /></Protected>} />
-        <Route path="/chat"       element={<Protected><Chat /></Protected>} />
-        <Route path="/deadlines"  element={<Protected><Deadlines /></Protected>} />
-        <Route path="/checklist"  element={<Protected><Checklist /></Protected>} />
-        <Route path="/calculator" element={<Protected><Calculator /></Protected>} />
-        <Route path="/schemes"    element={<Protected><Schemes /></Protected>} />
-        <Route path="/documents"  element={<Protected><Documents /></Protected>} />
-        <Route path="/profile"    element={<Protected><Profile /></Protected>} />
+        <Route path="/"              element={<Landing />} />
+        <Route path="/login"         element={<Login />} />
+        <Route path="/onboarding"    element={<Protected><Onboarding /></Protected>} />
+        <Route path="/dashboard"     element={<Protected><Dashboard /></Protected>} />
+        <Route path="/chat"          element={<Protected><Chat /></Protected>} />
+        <Route path="/deadlines"     element={<Protected><Deadlines /></Protected>} />
+        <Route path="/checklist"     element={<Protected><Checklist /></Protected>} />
+        <Route path="/calculator"    element={<Protected><Calculator /></Protected>} />
+        <Route path="/schemes"       element={<Protected><Schemes /></Protected>} />
+        <Route path="/documents"     element={<Protected><Documents /></Protected>} />
+        <Route path="/profile"       element={<Protected><Profile /></Protected>} />
+        <Route path="/tax-predictor" element={<Protected><TaxPredictor /></Protected>} />
       </Routes>
     </>
   );

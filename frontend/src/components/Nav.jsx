@@ -8,14 +8,15 @@ export default function Nav() {
   const path = location.pathname;
 
   const links = [
-    { path:'/dashboard',  label:'Dashboard' },
-    { path:'/chat',       label:'AI Copilot' },
-    { path:'/deadlines',  label:'Deadlines' },
-    { path:'/checklist',  label:'Checklist' },
-    { path:'/calculator', label:'Calculator' },
-    { path:'/schemes',    label:'Schemes' },
-    { path:'/documents',  label:'Documents' },
-    { path:'/profile',    label:'Profile' },
+    { path:'/dashboard',     label:'Dashboard' },
+    { path:'/chat',          label:'AI Copilot' },
+    { path:'/deadlines',     label:'Deadlines' },
+    { path:'/checklist',     label:'Checklist' },
+    { path:'/calculator',    label:'Calculator' },
+    { path:'/schemes',       label:'Schemes' },
+    { path:'/documents',     label:'Documents' },
+    { path:'/tax-predictor', label:'Tax Predictor' },
+    { path:'/profile',       label:'Profile' },
   ];
 
   const isHidden = path === '/' || path === '/login' || path === '/onboarding';

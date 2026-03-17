@@ -13,6 +13,7 @@ app.use('/api/auth',      require('./routes/authRoutes'));
 app.use('/api/chat',      require('./routes/chatRoutes'));
 app.use('/api/checklist', require('./routes/checklistRoutes'));
 app.use('/api/profile',   require('./routes/profileRoutes'));
+app.use('/api/ml',        require('./routes/mlRoutes'));   // ← NEW LINE
 
 mongoose.connect(process.env.MONGO_URI, {
   tlsAllowInvalidCertificates: true,

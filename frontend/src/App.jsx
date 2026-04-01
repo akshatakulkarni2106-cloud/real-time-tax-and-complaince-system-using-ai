@@ -12,7 +12,8 @@ import Calculator  from './pages/Calculator';
 import Schemes     from './pages/Schemes';
 import Documents   from './pages/Documents';
 import Profile     from './pages/Profile';
-import TaxPredictor from './pages/taxpredictor';
+import TaxPredictor    from './pages/taxpredictor';
+import VoiceAssistant  from './pages/VoiceAssistant';
 
 function Protected({ children }) {
   const { token } = useApp();
@@ -36,6 +37,7 @@ function AppRoutes() {
         <Route path="/documents"     element={<Protected><Documents /></Protected>} />
         <Route path="/profile"       element={<Protected><Profile /></Protected>} />
         <Route path="/tax-predictor" element={<Protected><TaxPredictor /></Protected>} />
+        <Route path="/voice"         element={<Protected><VoiceAssistant /></Protected>} />
       </Routes>
     </>
   );

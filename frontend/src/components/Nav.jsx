@@ -10,6 +10,7 @@ export default function Nav() {
   const links = [
     { path:'/dashboard',     label:'Dashboard' },
     { path:'/chat',          label:'AI Copilot' },
+    { path:'/voice',         label:'🎤 Voice' },
     { path:'/deadlines',     label:'Deadlines' },
     { path:'/checklist',     label:'Checklist' },
     { path:'/calculator',    label:'Calculator' },

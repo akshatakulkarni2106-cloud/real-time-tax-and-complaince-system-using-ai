@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AppContext = createContext();
-const API = 'http://localhost:5000/api';
+const API = import.meta.env.VITE_API_URL + '/api';
 
 export function AppProvider({ children }) {
   const [token, setToken]     = useState(localStorage.getItem('token') || '');
